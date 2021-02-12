@@ -1,0 +1,37 @@
+{% extends "todoapp/base.html" %}
+
+{% block title %}
+ Create Page
+{% endblock title %}
+
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+   <div class="container">
+     <h1 class="display-4"><center>To-Do List</center></h1>
+     <p class="lead"><center>This is To-Do List for Python Django Web Development</center></p>
+        <br> <br>
+    </div>
+</div>
+
+
+<div class="container">
+    <form method="POST">
+        {% csrf_token %} 
+        <div class="mb-3">
+          <label  class="form-label">To-Do Title</label>
+          <input type="text" class="form-control" name="title">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Description</label>
+          <input type="text" class="form-control" name="description" >
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" name="finished" >
+          <label class="form-check-label" >Is Finished?</label>
+        </div>
+        <button type="submit" class="btn btn-success">Add to List</button>
+      </form>
+</div>
+
+ 
+{% endblock content %}
